@@ -1,0 +1,34 @@
+# Spring Boot configuration
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: XXXXXXX@XXXXX.com
+    password: XXXXXXXXX
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/gpadb
+    username: postgres
+    password: root
+  # JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: validate # When you launch the application for the first time - switch "none" at "create"
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+
+server:
+  port: 8080 #set your port
+
