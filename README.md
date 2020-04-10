@@ -26,7 +26,7 @@ Essas requisições dos cliente são autenticadas através da passagem de um Bea
  token que por sua vez possui data de expiração e solidos padrões de criptografia.
  
 O compartilhamento de informações dentro e fora da aplicação é devidamente segmentado e 
-filtrado para informações desnecessárias ou até sigilosas acabem chegando até clientes. 
+filtrado para que informações desnecessárias ou até sigilosas não acabem chegando até clientes. 
 Para isso, foi utilizado o padrão DTO para criação das entidades de resposta das solicitações dos clientes, 
 conferindo segurança e escalabilidade para a solução através do isolamento da camada de API da camada de persistência.
 
@@ -45,8 +45,7 @@ conferindo segurança e escalabilidade para a solução através do isolamento d
 
 ### Testes
 
-Para garantir o funcionamento da aplicação foi realizado no primeiro momento um fluxo de testes manuais, 
-mas também testes de integração nos endpoints e testes unitários na camada de serviço estão sendo elaborados, 
+Para garantir o funcionamento da aplicação foi realizado no primeiro momento um fluxo de testes manuais. Testes de integração nos endpoints e testes unitários na camada de serviço estão sendo elaborados, 
 o que irá garantir escalabilidade para as novas versões da aplicação. 
 
 #### Fluxo de testes
@@ -54,37 +53,47 @@ o que irá garantir escalabilidade para as novas versões da aplicação.
 ** Criação de conta
 ** Autenticação
 ** CRUD Marcas/categorias
-** CRUD Patrimõnios
+** CRUD Patrimônios
 ** Edição de informações pessoais do usuário.
 ** Recuperação de senha.
 
 
 ## Como iniciar o projeto na minha máquina?
 
-### 1 
-É necessário clonar ou baixar o projeto.zip
+### 1º É necessário clonar ou baixar o projeto.zip
 
-### 2 
-Executar o comando:
+### 2º Executar o comando
 ```
 docker-compose -f stack.yml up
 ```
 
 ps: lembre-se de conferir se possuí o docker instalado e rodando.
 
-Assim o banco de dados Postgress vai estar instalado e pronto pra uso.
+Assim o banco de dados PostgreSQL vai estar instalado e pronto pra uso.
 
-### 3 
+### 3º Criar as tabelas
 
 Acessar a linha de comando ou alguma abstração 
 e executar o script init.sql
 
 Sendo assim, as tabelas estaram criadas.
 
-### 4
+### 4º Configurar uma conta de e-mail
 
 Configurar uma conta de e-mail (e-mail e senha) para poder conferir as funcionalidades de recuperação de conta.
 
+Para realizar esse passo é necessário ir até o arquivo aplication.yml
+
+e alterar as propriedades com base no servidor de sua preferência.
+
+```
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: XXXX@gmail.com #Adicionar e-mail para testar funcionalidade de troca de senha e iniciar a aplicação sem erros
+    password: XXXXXXXXXXX
+    port: 587
+```
 
 Com esses passos realizados a aplicação deve iniciar normalmente, caso contrário não hesite em me acionar que veremos isso juntos, ok?
 
@@ -97,6 +106,6 @@ onde é possível conferir a nomenclatura dos endpoint propriedades e parâmetro
 
 ## Autor
 
-* **Lucas Frederico Mançan** - *Initial work* - [PurpleBooth](lucasfmancan@gmail.com)
+* **Lucas Frederico Mançan** - (lucasfmancan@gmail.com)
 
 
