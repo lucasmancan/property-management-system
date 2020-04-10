@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 @Log4j2
 public class EmailServiceImpl implements EmailService {
 
-//    private JavaMailSender emailSender;
-//
-//    @Autowired
-//    public EmailServiceImpl(JavaMailSender emailSender) {
-//        this.emailSender = emailSender;
-//    }
+    private JavaMailSender emailSender;
+
+    @Autowired
+    public EmailServiceImpl(JavaMailSender emailSender) {
+        this.emailSender = emailSender;
+    }
 
     @Override
     public void send(MailMessage mailMessage) throws AppException {
@@ -31,7 +31,7 @@ public class EmailServiceImpl implements EmailService {
 
         try{
 
-//            emailSender.send(message);
+            emailSender.send(message);
         }catch (Exception e){
             log.log(Level.ERROR, "" + e.getMessage(), e);
 
