@@ -101,7 +101,7 @@ Com esses passos realizados a aplicação deve iniciar normalmente, caso contrá
 
 Todos os Endpoints atualmente construídos foram mapeados através da ferramente Swagger e 
 estão disponíveis para consulta ao acessar {host:port}/swagger-ui.html#/ 
-onde é possível conferir a nomenclatura dos endpoint propriedades e parâmetros.
+onde é possível conferir a nomenclatura, propriedades e parâmetros de cada recurso.
 
 
 ## Autor
