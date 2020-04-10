@@ -1,4 +1,4 @@
-package br.com.lucasmancan.pms.models.dto;
+package br.com.lucasmancan.pms.models;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

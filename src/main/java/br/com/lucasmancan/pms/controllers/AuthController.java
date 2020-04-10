@@ -4,7 +4,7 @@ package br.com.lucasmancan.pms.controllers;
 import br.com.lucasmancan.pms.exceptions.AppException;
 import br.com.lucasmancan.pms.models.AppResponse;
 import br.com.lucasmancan.pms.models.PasswordConfirmation;
-import br.com.lucasmancan.pms.models.dto.AccountInfo;
+import br.com.lucasmancan.pms.models.AccountInfo;
 import br.com.lucasmancan.pms.services.interfaces.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

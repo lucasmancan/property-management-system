@@ -4,7 +4,7 @@ import br.com.lucasmancan.pms.configurations.AuthenticationUser;
 import br.com.lucasmancan.pms.exceptions.AppException;
 import br.com.lucasmancan.pms.exceptions.AppNotFoundException;
 import br.com.lucasmancan.pms.models.*;
-import br.com.lucasmancan.pms.models.dto.AccountInfo;
+import br.com.lucasmancan.pms.models.AccountInfo;
 import br.com.lucasmancan.pms.models.dto.UserDTO;
 import br.com.lucasmancan.pms.repositories.UserRepository;
 import br.com.lucasmancan.pms.services.interfaces.EmailService;
