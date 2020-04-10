@@ -10,26 +10,26 @@ services:
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+      - init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
     networks:
       - postgres
     restart: unless-stopped
 
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-    volumes:
-      - pgadmin:/root/.pgadmin
+  pmsapi:
+    image: springbootapp:latest
+    network_mode: bridge
+    container_name: springbootapp
+    expose:
+      - 8080
     ports:
-      - "${PGADMIN_PORT:-5050}:80"
-    networks:
-      - postgres
+      - 8080:8080
     restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
 
 networks:
   postgres:
@@ -37,4 +37,3 @@ networks:
 
 volumes:
   postgres:
-  pgadmin:
